@@ -14,7 +14,7 @@ Not quite got all of the functionality right yet but design is mostly accurate
 ### Links
 
 - [Solution]()
-- [Live Site]: (https://hk273.github.io/crowd-funding-product-page/)
+- [Live Site](https://hk273.github.io/crowd-funding-product-page/)
 
 ### Useful Resources
 
