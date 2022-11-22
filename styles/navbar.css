@@ -1,0 +1,212 @@
+/* 
+Fonts: Commissioner 400, 500, 700 
+font-family: 'Commissioner', sans-serif;
+
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+
+:root {
+  --dark-cyan: hsl(176, 72%, 28%);
+}
+
+.logo_one {
+  display: none;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav-menu {
+  white-space: nowrap;
+  list-style-type: none;
+  /* First three items left of screen */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* t-r-b-l */
+  padding: 5rem 10rem 0 10rem;
+}
+
+/* login / sign up left of screen */
+
+nav li:nth-child(2) {
+  margin-left: auto;
+}
+
+.main-item {
+  font-family: "Commissioner", sans-serif;
+  /* font-weight: 500; */
+  text-decoration: none;
+  cursor: pointer;
+  /* Space between links */
+  margin: 0 2rem;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease 0s;
+}
+.nav-item {
+  margin: 0 2rem;
+}
+.main-item:hover {
+  color: black;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Button styles */
+
+/* Contact */
+.buttons {
+  background-color: white;
+  color: var(--almost-white);
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  width: 13rem;
+  height: 5rem;
+  text-align: center;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 1.8rem;
+}
+.buttons:hover {
+  background-color: var(--yellow);
+  color: white;
+}
+
+/* Hamburger styles */
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 4rem;
+  height: 0.3rem;
+  margin: 0.6rem auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+/* submenu */
+
+.active .item {
+  display: block;
+  position: relative;
+}
+
+.icons {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+.has-submenu i {
+  font-size: 12px;
+}
+
+.toggle i {
+  font-size: 3rem;
+  color: white;
+}
+
+/* Breakpoints */
+
+/* Nav Header / Top Heading / Footer at smaller breakpoint */
+
+/* Navigation Menu */
+
+@media only screen and (max-width: 80em) {
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 3rem 0 3rem;
+  }
+  /* remove logo */
+  .logo {
+    display: none;
+  }
+  /* add flex logo */
+  .logo_one {
+    display: flex;
+    cursor: pointer;
+  }
+  .nav-menu {
+    position: fixed;
+    padding: 4rem 0 2rem 0;
+    right: -100%;
+    flex-direction: column;
+    background-color: white;
+    opacity: 0.9;
+    width: 85%;
+    border-radius: 1rem;
+    justify-content: start;
+    align-items: flex-start;
+    /* This creates a slide in affect */
+    /* transition: 0.5s; */
+  }
+  .nav-menu.active {
+    /* Centre collapsable menu */
+    position: absolute;
+    z-index: 1;
+    top: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .buttons {
+    background-color: var(--yellow);
+    margin-left: 3rem;
+  }
+  .buttons:hover {
+    background-color: var(--header-blue);
+  }
+  .main-item {
+    color: black;
+  }
+  .main-item:hover {
+    color: var(--dark-cyan);
+  }
+  /* Reset login / register up position */
+  nav li:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .nav-item {
+    text-align: center;
+  }
+  .logo_one {
+    margin-top: 2.5rem;
+  }
+
+  /* space between menu items */
+  .item {
+    margin-bottom: 3rem;
+  }
+  li:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  .hamburger {
+    position: relative;
+    margin-left: auto;
+    display: block;
+    cursor: pointer;
+    margin-top: 1.5rem;
+  }
+  /* Hamburger transition */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(0.9rem) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-0.9rem) rotate(-45deg);
+  }
+}

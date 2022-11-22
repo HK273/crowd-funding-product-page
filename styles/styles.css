@@ -1,0 +1,422 @@
+/* ===============================================================================
+Styles for crowdfunding page:
+Centre position absolute items: https://stackoverflow.com/questions/8508275/how-to-center-a-position-absolute-element
+X close button: https://stackoverflow.com/questions/18611195/x-close-button-only-using-css
+Style radio buttons: https://moderncss.dev/pure-css-custom-styled-radio-buttons/
+disable radio button: http://www.javascripter.net/faq/disablin.htm
+=================================================================================== */
+
+/* 
+Fonts: Commissioner 400, 500, 700 
+font-family: 'Commissioner', sans-serif;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+
+/* Custom Properties  */
+
+:root {
+  /* Primary */
+  --moderate-cyan: hsl(176, 50%, 47%);
+  --dark-cyan: hsl(176, 72%, 28%);
+  --background-gray: #f9f9f9;
+  /* Neautral */
+  --black: hsl(0, 0%, 0%);
+  --dark-gray: hsl(0, 0%, 48%);
+  /* hover */
+  --hover-blue: #2d3270;
+}
+
+/* Resets */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  /* mobile viewport bug fix */
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+  background-color: var(--background-gray);
+}
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+/* =========================================== */
+
+/* ========================================== */
+/* Modal styles */
+
+.pledge-one,
+.pledge-two,
+.pledge-three {
+  display: none;
+}
+
+/* input pledge section */
+/* style inputs: https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/ */
+.active {
+  display: flex;
+  padding-top: 2rem;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  text-align: center;
+  color: var(--dark-gray);
+  font-weight: 400;
+  font-family: "Commissioner", sans-serif;
+}
+.modal {
+  padding: 2rem 5rem 5rem 5rem;
+  max-width: 90rem;
+  border-radius: 1rem;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+  margin: 10rem 2rem 0 2rem;
+  /* margin: auto; */
+}
+
+/* Radio buttons */
+.form-control {
+  font-family: system-ui, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+/* Border on radio check */
+.border {
+  background-color: red;
+}
+.flex-mod {
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+/* input  */
+input[type="number"] {
+  background-color: white;
+  border: 1px solid var(--dark-gray);
+  color: var(--black);
+  font-weight: 400;
+  text-align: center;
+  font-family: "Commissioner", sans-serif;
+  width: 137px;
+  height: 50px;
+  margin-bottom: 1rem;
+  border-radius: 5rem;
+  font-size: 1.8rem;
+}
+/* Create the X close */
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+/* Thanks Modal */
+.modal-two {
+  padding: 5rem 5rem 5rem 5rem;
+  border-radius: 1rem;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+  margin: 10rem 2rem 0 2rem;
+}
+.modal-two::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+.mod-text {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.centre-img {
+  display: flex;
+  justify-content: center;
+}
+/* ======================================== */
+
+header {
+  background: url(../images/image-hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+  height: 40rem;
+}
+/* Main / Grid Layout */
+main {
+  /* max-width: 900px; */
+  /* t-r-b-l */
+  padding: 0 3rem 0 3rem;
+}
+.master-img {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-top: -3rem;
+}
+.grid {
+  display: grid;
+  z-index: -1;
+  margin-top: -10rem;
+  margin-bottom: 5rem;
+  /* remove this after content is added */
+  /* min-height: 100vh; */
+
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+.grid-item {
+  background-color: white;
+
+  padding: 0 3rem 4rem 3rem;
+  border-radius: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+/* Mahogany Special Edition */
+.no-stock {
+  opacity: 0.4;
+}
+.btn-no {
+  /* make btn unlickable */
+  pointer-events: none;
+  background-color: grey;
+  color: white;
+  font-weight: 400;
+  font-family: "Commissioner", sans-serif;
+  padding: 0 3rem 0 3rem;
+  height: 5rem;
+  border-radius: 5rem;
+  font-size: 1.8rem;
+}
+/* ===================================================== */
+
+/* General Styles */
+h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  /* t-r-b-l */
+  margin: 5rem 0 3rem 0;
+  font-weight: 700;
+  font-family: "Commissioner", sans-serif;
+}
+h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: "Commissioner", sans-serif;
+  color: var(--dark-gray);
+  margin-bottom: 2.5rem;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  text-align: center;
+  color: var(--dark-gray);
+  font-weight: 400;
+  font-family: "Commissioner", sans-serif;
+}
+.btn {
+  background-color: var(--moderate-cyan);
+  color: white;
+  font-weight: 400;
+  font-family: "Commissioner", sans-serif;
+  padding: 0 3rem 0 3rem;
+  border-radius: 5rem;
+  font-size: 1.8rem;
+}
+.btn:hover,
+.btn-two:hover {
+  background-color: white;
+  border: 1px solid var(--dark-cyan);
+  color: var(--dark-cyan);
+}
+/* .btn:hover{
+
+} */
+.btn-two {
+  background-color: var(--moderate-cyan);
+  color: white;
+  font-weight: 400;
+  font-family: "Commissioner", sans-serif;
+  padding: 0 3rem 0 3rem;
+  height: 5rem;
+  border-radius: 5rem;
+  font-size: 1.8rem;
+}
+.desktop {
+  display: none;
+}
+/* flex-top section buttons / bookmark */
+.flex-one {
+  display: flex;
+  margin-top: 4rem;
+  justify-content: space-around;
+}
+h2 {
+  font-size: 2.5rem;
+  text-align: start;
+  /* t-r-b-l */
+  margin: 3rem 0 2rem 0;
+  font-weight: 700;
+  font-family: "Commissioner", sans-serif;
+}
+.par-one,
+.par-two {
+  text-align: start;
+  margin-bottom: 2rem;
+}
+/* Backed section */
+.inner-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.col-one,
+.col-two,
+.col-three {
+  text-align: center;
+}
+
+/* line */
+.line {
+  display: flex;
+  justify-content: center;
+}
+.space {
+  display: block;
+  border: 0.1rem solid var(--dark-gray);
+  border-radius: 0.1rem;
+  width: 10rem;
+}
+/* About section */
+.grid-about {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.grid-card {
+  border: 1px solid rgb(208, 205, 205);
+  border-radius: 1rem;
+  /* t-r-b-l */
+  padding: 3rem 3rem 3rem 3rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "Commissioner", sans-serif;
+  margin-bottom: 0.5rem;
+}
+h5 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--moderate-cyan);
+  font-family: "Commissioner", sans-serif;
+  margin-bottom: 2rem;
+}
+.num-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.text-left {
+  text-align: start;
+  margin: 0 0 0 0;
+}
+
+@media only screen and (min-width: 70em) {
+  main {
+    /* max-width: 900px; */
+    /* t-r-b-l */
+    padding: 0 30rem 0 30rem;
+  }
+  header {
+    background: url(../images/image-hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    height: 50rem;
+  }
+  .inner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .line {
+    display: none;
+  }
+  .num-left {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+
+/* Modal needs different break point */
+
+@media only screen and (min-width: 60em) {
+  .modal,
+  .modal-two {
+    margin: auto;
+  }
+  .modal-two {
+    max-width: 45rem;
+  }
+}
