@@ -9,11 +9,12 @@ This is a solution to the [Crowdfunding product page challenge on Frontend Mento
   - [Useful Resources](#Useful-Resources)
 
 ## Overview
+Not quite got all of the functionality right yet but design is mostly accurate
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution]()
+- [Live Site]: (https://hk273.github.io/crowd-funding-product-page/)
 
 ### Useful Resources
 
